@@ -2,7 +2,6 @@
   <div id="main-app" class="container">
     <form-input @filter="filterProducts"/>
     <result-list :allProducts="allProducts"/>
-    <product-service />
   </div>
 </template>
 
