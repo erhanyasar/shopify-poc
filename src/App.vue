@@ -1,12 +1,13 @@
 <template>
   <div id="main-app" class="container">
-    <FormInput />
-    <ResultList />
-    <ProductService />
+    <form-input @filter="filterProducts"/>
+    <result-list :allProducts="allProducts"/>
+    <product-service />
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 import FormInput from './components/FormInput.vue'
 import ResultList from './components/ResultList.vue'
 import ProductService from './utils/product.service.vue'
@@ -17,6 +18,25 @@ export default {
     FormInput,
     ResultList,
     ProductService
+  },
+  data: function() {
+    return {
+      allProducts: []
+    }
+  },
+  mounted() {
+    axios
+      .get("./products.json")
+      .then(response => {
+        //console.log(response.data.products);
+        this.allProducts = response.data.products
+      });
+  },
+  methods: {
+    filterProducts: function(searchParam, event) {
+      alert(event.target.payload[0]);
+      console.log(searchParam);
+    }
   }
 }
 </script>

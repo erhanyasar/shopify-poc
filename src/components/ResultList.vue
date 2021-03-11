@@ -1,6 +1,6 @@
 <template>
-  <div id="result-list" class="container mt-5">
-    <h1>{{ filteredProducts.length > 0 ? filterTitle : title }}</h1>
+  <div class="mt-5">
+    <h1 class="mb-4">{{ filteredProducts.length > 0 ? filterTitle : title }}</h1>
     <table class="table table-success table-bordered table-striped">
       <thead>
         <th>#</th>
@@ -8,7 +8,7 @@
         <th>Product Title</th>
       </thead>
       <tbody>
-        <tr v-for="(product, i) in filteredProducts" :key="i">
+        <tr v-for="(product, i) in allProducts" :key="i">
           <td>{{ i + 1 }}</td>
           <td>{{ product.id}}</td>
           <td>{{ product.title}}</td>
@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   name: 'ResultList',
   data: function() {
@@ -30,12 +28,6 @@ export default {
       filteredProducts: []
     }
   },
-  mounted() {
-    axios.get("./products.json")
-      .then(response => {
-        //console.log(response.data.products);
-        this.filteredProducts = response.data.products
-      });
-  }
+  props: ["allProducts"]
 }
 </script>
