@@ -1,10 +1,8 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <FormInput />
-      <ResultList />
-      <ProductService />
-    </div>
+  <div id="main-app" class="container">
+    <FormInput />
+    <ResultList />
+    <ProductService />
   </div>
 </template>
 
@@ -14,7 +12,7 @@ import ResultList from './components/ResultList.vue'
 import ProductService from './utils/product.service.vue'
 
 export default {
-  name: 'App',
+  name: 'MainApp',
   components: {
     FormInput,
     ResultList,
@@ -24,7 +22,7 @@ export default {
 </script>
 
 <style>
-#app {
+#main-app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
