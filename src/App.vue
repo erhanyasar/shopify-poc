@@ -10,14 +10,12 @@
 import axios from 'axios';
 import FormInput from './components/FormInput.vue'
 import ResultList from './components/ResultList.vue'
-import ProductService from './utils/product.service.vue'
 
 export default {
   name: 'MainApp',
   components: {
     FormInput,
-    ResultList,
-    ProductService
+    ResultList
   },
   data: function() {
     return {
