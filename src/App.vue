@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <FormInput />
-    <ResultList />
+    <div class="container">
+      <FormInput />
+      <ResultList />
+      <ProductService />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import FormInput from './components/FormInput.vue'
 import ResultList from './components/ResultList.vue'
+import ProductService from './utils/product.service.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     FormInput,
-    ResultList
+    ResultList,
+    ProductService
   }
 }
 </script>

@@ -1,15 +1,12 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="container mt-5">
+    <h1>Product Results:</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ResultList',
-  props: {
-    msg: String
-  }
+  name: 'ResultList'
 }
 </script>
 
